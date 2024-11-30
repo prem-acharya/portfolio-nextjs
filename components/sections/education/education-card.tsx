@@ -2,33 +2,77 @@
 
 import { motion } from "framer-motion";
 import { GraduationCap } from "lucide-react";
+import { useState } from "react";
 
 interface EducationCardProps {
   degree: string;
   institution: string;
+  duration: string;
   year: string;
   description: string;
+  courses: string[];
+  gpa: string;
+  icon: React.ReactNode;
+  dateIcon: React.ReactNode;
   index: number;
 }
 
-export function EducationCard({ degree, institution, year, description, index }: EducationCardProps) {
+export function EducationCard({
+  degree,
+  institution,
+  duration,
+  description,
+  courses,
+  gpa,
+  icon,
+  dateIcon,
+  index
+}: EducationCardProps) {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.2 }}
-      className="bg-card p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-    >
-      <div className="flex items-start gap-4">
-        <div className="p-3 bg-primary/10 rounded-lg">
-          <GraduationCap className="h-6 w-6 text-primary" />
+      transition={{ delay: index * 0.1 }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="bg-card rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105"
+    >   
+      <div className="">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center cursor-pointer">
+            <div className="w-14 h-10 p-2 bg-gray-100 dark:bg-accent/80 rounded-md flex items-center justify-center text-foreground dark:text-foreground-400">
+              {icon}
+            </div>
+            <div className="ml-4">
+              <div className="lg:text-xl md:text-lg sm:text-sm font-bold text-foreground-900 dark:text-white">{degree}</div>
+              <p className="text-blue-600 dark:text-blue-400">{institution}</p>
+              {/* <div className="flex items-center text-gray-600 dark:text-gray-300 text-sm justify-start mt-2">
+                {dateIcon}
+                <span className="ml-2">{duration}</span>
+              </div> */}
+            </div>
+          </div>
         </div>
-        <div className="space-y-2">
-          <span className="text-sm text-muted-foreground">{year}</span>
-          <h3 className="text-xl font-semibold">{degree}</h3>
-          <p className="text-primary font-medium">{institution}</p>
-          <p className="text-muted-foreground">{description}</p>
+        
+        <p className="text-gray-600 dark:text-gray-300 mb-4">{description}</p>
+        
+        <div className={`transition-all duration-300 ${isHovered ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
+          <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+            <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Key Courses</h4>
+            <ul className="grid grid-cols-2 gap-2">
+              {courses.map((course, index) => (
+                <li key={index} className="text-sm text-gray-600 dark:text-gray-300">
+                  • {course}
+                </li>
+              ))}
+            </ul>
+            {/* <p className="mt-4 text-sm font-semibold text-gray-900 dark:text-white">
+              GPA: <span className="text-blue-600 dark:text-blue-400">{gpa}</span>
+            </p> */}
+          </div>
         </div>
       </div>
     </motion.div>
