@@ -5,6 +5,7 @@ import { SparklesCore } from "../sparkles";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, UserRound } from "lucide-react";
 import { User } from "lucide-react";
+import { WeatherCard } from "@/components/weather/weather-card";
 
 export function HeroSection() {
   return (
@@ -15,9 +16,11 @@ export function HeroSection() {
       <SparklesCore
         background="transparent"
         minSize={0.6}
-        maxSize={1.5}
+        maxSize={1.6}
         particleCount={50}
       />
+      
+      <WeatherCard />
       
       <div className="relative z-10 text-center px-4">
         <motion.div
