@@ -34,7 +34,7 @@ export function EducationCard({
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
+      transition={{ delay: index * 0.2, duration: 0.5 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="bg-card rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105"

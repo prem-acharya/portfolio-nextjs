@@ -142,7 +142,7 @@ export function Navbar() {
                       ? 'text-primary bg-accent'
                       : 'text-muted-foreground hover:text-primary hover:bg-accent'
                   }`}
-                  onClick={(e) => {
+                  onClick={() => {
                     setIsOpen(false);
                     document.querySelector(item.href)?.scrollIntoView({
                       behavior: 'smooth',
