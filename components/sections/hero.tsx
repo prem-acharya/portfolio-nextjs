@@ -3,8 +3,7 @@
 import { motion } from "framer-motion";
 import { SparklesCore } from "../sparkles";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, UserRound } from "lucide-react";
-import { User } from "lucide-react";
+import { ArrowRight, User } from "lucide-react";
 import { WeatherCard } from "@/components/weather/weather-card";
 
 export function HeroSection() {

@@ -82,7 +82,7 @@ export function WeatherCard() {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="">
-        <div className={`card flex flex-row justify-center items-center hover:bg-yellow-200 dark:hover:bg-yellow-900 bg-foreground/10 ${isHovered ? "rounded-t-3xl" : "rounded-3xl"} p-2`}>
+        <div className={`card cursor-pointer flex flex-row justify-center items-center hover:bg-yellow-200 dark:hover:bg-yellow-900 bg-foreground/10 ${isHovered ? "rounded-t-3xl" : "rounded-3xl"} p-2`}>
           <svg className="weather w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16" viewBox="0 0 100 100">
             <image
               className=""
@@ -103,7 +103,7 @@ export function WeatherCard() {
             transition={{ duration: 0.3 }}
             className="sub-card"
           >
-            <div className="bg-yellow-900 p-2 flex flex-row items-center gap-2 md:gap-4 justify-center">
+            <div className="dark:bg-yellow-900 bg-yellow-200 cursor-pointer p-2 flex flex-row items-center gap-2 md:gap-4 justify-center">
               <div className="humidity">
                 <div className="humiditytext text-xs md:text-sm lg:text-base">
                   Humidity<br />{weather.main.humidity}%
@@ -115,7 +115,7 @@ export function WeatherCard() {
                 </div>
               </div>
             </div>
-            <div className="bg-yellow-900 p-2 flex flex-row items-center gap-2 md:gap-4 justify-center">
+            <div className="dark:bg-yellow-900 bg-yellow-200 cursor-pointer p-2 flex flex-row items-center gap-2 md:gap-4 justify-center">
               <div className="pressure">
                 <div className="pressuretext text-xs md:text-sm lg:text-base">
                   Pressure<br />{weather.main.pressure} mbar
@@ -127,7 +127,7 @@ export function WeatherCard() {
                 </div>
               </div>
             </div>
-            <div className={cn("card3", getAQIColor(30)) + " rounded-b-3xl text-center"}>
+            <div className={cn("card3", getAQIColor(30)) + " rounded-b-3xl text-center cursor-pointer"}>
               {getAQIText(30)}
             </div>
           </motion.div>
