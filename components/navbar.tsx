@@ -49,7 +49,12 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <span className="text-lg md:text-xl font-bold mb-6 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-              Hello World!
+              <a href="#home" className="cursor-pointer" onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#home')?.scrollIntoView({
+                  behavior: 'smooth',
+                });
+              }}>Hello World!</a>
             </span>
           </div>
 
