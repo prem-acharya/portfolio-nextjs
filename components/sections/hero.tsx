@@ -38,8 +38,8 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-          Your code, your legacy!
-          {/* Building dreams in bytes. */}
+          {/* Your code, your legacy! */}
+          Building dreams in bytes!
           </p>
         </motion.div>
 
