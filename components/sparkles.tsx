@@ -16,7 +16,7 @@ export const SparklesCore: React.FC<SparklesProps> = ({
   maxSize = 1,
   particleCount = 50,
 }) => {
-  const { theme } = useTheme();
+  const { theme = 'dark' } = useTheme();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mousePosition = useRef({ x: 0, y: 0 });
 

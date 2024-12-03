@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { defaultConfig } from 'next/dist/server/config-shared';
 
 const navItems = [
   { name: 'Home', href: '#home' },
@@ -18,7 +19,7 @@ export function Navbar() {
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme({ defaultTheme: 'dark' });
 
   useEffect(() => {
     setMounted(true);
