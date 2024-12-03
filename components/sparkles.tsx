@@ -11,7 +11,7 @@ interface SparklesProps {
 }
 
 export const SparklesCore: React.FC<SparklesProps> = ({
-  background = "transparent",
+  background,
   minSize = 0.4,
   maxSize = 1,
   particleCount = 50,
@@ -85,7 +85,7 @@ export const SparklesCore: React.FC<SparklesProps> = ({
 
     const drawParticles = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = background;
+      ctx.fillStyle = background || (theme === 'dark' ? 'black' : 'white');
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach((particle) => {
