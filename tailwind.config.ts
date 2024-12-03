@@ -61,6 +61,9 @@ const config: Config = {
           '5': 'hsl(var(--chart-5))',
         },
       },
+      fontSize: {
+        '6xl': ['3.75rem', { lineHeight: '1.2' }],
+      },
       keyframes: {
         'accordion-down': {
           from: {
