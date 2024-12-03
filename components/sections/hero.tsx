@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { SparklesCore } from "../sparkles";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, User } from "lucide-react";
-import { WeatherCard } from "@/components/weather/weather-card";
+// import { WeatherCard } from "@/components/weather/weather-card";
 
 export function HeroSection() {
   return (
@@ -19,7 +19,7 @@ export function HeroSection() {
         particleCount={50}
       />
       
-      <WeatherCard />
+      {/* <WeatherCard /> */}
       
       <div className="relative z-10 text-center px-4">
         <motion.div

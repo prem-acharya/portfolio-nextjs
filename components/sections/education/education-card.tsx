@@ -34,7 +34,7 @@ export function EducationCard({
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.2, duration: 0.5 }}
+      transition={{ duration: 0.5 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="bg-card rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105"
@@ -60,14 +60,21 @@ export function EducationCard({
         
         <div className={`transition-all duration-300 ${isHovered ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
           <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-            <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Key Courses</h4>
-            <ul className="grid grid-cols-2 gap-2">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Key Courses</h4>
+              <ul className="grid grid-cols-2 gap-2">
               {courses.map((course, index) => (
                 <li key={index} className="text-sm text-gray-600 dark:text-gray-300">
                   • {course}
                 </li>
-              ))}
-            </ul>
+                ))}
+              </ul>
+            </motion.div>
             {/* <p className="mt-4 text-sm font-semibold text-gray-900 dark:text-white">
               GPA: <span className="text-blue-600 dark:text-blue-400">{gpa}</span>
             </p> */}
