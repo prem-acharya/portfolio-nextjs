@@ -19,7 +19,7 @@ export function Navbar() {
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const { theme, setTheme } = useTheme({ defaultTheme: 'dark' });
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
