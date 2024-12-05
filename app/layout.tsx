@@ -13,8 +13,9 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
   },
-  title: 'Prem Acharya',
-  description: 'A showcase of my work and skills',
+  title: 'Prem Acharya | Full-Stack Developer & React, Next.js Specialist',
+  description: 'Discover Prem Acharya\'s portfolio featuring innovative web development, React and Next.js expertise, and scalable full-stack solutions for modern businesses.',
+  keywords: 'Prem Acharya, full-stack developer, React developer, Next.js developer, web development portfolio, modern web design, freelance web developer, API integration, scalable web solutions',
 };
 
 export default function RootLayout({
