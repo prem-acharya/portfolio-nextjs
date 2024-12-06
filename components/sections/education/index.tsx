@@ -8,6 +8,7 @@ const education = [
   {
     degree: "B.Tech in ICT (Information and Communication Technology)",
     institution: "Marwadi University - Rajkot, Gujarat",
+    institutionUrl: "https://www.marwadiuniversity.ac.in/",
     year: "2021 - 2024",
     description: "Specialized in Software Engineering and Artificial Intelligence. Graduated with honors.",
     duration: "3 years",
@@ -19,6 +20,7 @@ const education = [
   {
     degree: "Diploma in ICT (Information and Communication Technology)",
     institution: "Marwadi University - Rajkot, Gujarat",
+    institutionUrl: "https://www.marwadiuniversity.ac.in/",
     year: "2018 - 2021",
     description: "Core focus on programming fundamentals, data structures, and algorithms.",
     duration: "3 years",

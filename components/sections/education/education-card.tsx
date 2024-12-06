@@ -2,10 +2,11 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-
+import { LinkPreview } from "@/components/ui/link-preview";
 interface EducationCardProps {
   degree: string;
   institution: string;
+  institutionUrl: string;
   duration: string;
   year: string;
   description: string;
@@ -19,6 +20,7 @@ interface EducationCardProps {
 export function EducationCard({
   degree,
   institution,
+  institutionUrl,
   duration,
   description,
   courses,
@@ -45,6 +47,7 @@ export function EducationCard({
             <div className="w-14 h-10 p-2 bg-gray-100 dark:bg-accent/80 rounded-md flex items-center justify-center text-foreground dark:text-foreground-400">
               {icon}
             </div>
+            <LinkPreview url={institutionUrl} className="text-blue-600 dark:text-blue-400">
             <div className="ml-4">
               <div className="lg:text-xl md:text-lg sm:text-sm font-bold text-foreground-900 dark:text-white">{degree}</div>
               <p className="text-blue-600 dark:text-blue-400">{institution}</p>
@@ -53,6 +56,7 @@ export function EducationCard({
                 <span className="ml-2">{duration}</span>
               </div> */}
             </div>
+            </LinkPreview>
           </div>
         </div>
         

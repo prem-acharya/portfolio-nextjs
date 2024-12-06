@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
 import IconCloud from "@/components/ui/icon-cloud";
 import { Github, Linkedin, Mail, Twitter, Instagram } from "lucide-react";
+import { LinkPreview } from "@/components/ui/link-preview";
 // import dynamic from "next/dynamic";
 
 // const IconCloud = dynamic(() => import("@/components/ui/icon-cloud"), {
@@ -19,6 +20,11 @@ export function AboutSection() {
       href: "https://github.com/prem-acharya",
       label: "GitHub",
     },
+    // {
+    //   icon: Github,
+    //   href: "https://github.com/premacharya15",
+    //   label: "GitHub",
+    // },
     {
       icon: Linkedin,
       href: "https://www.linkedin.com/in/prem-acharya-38772822b/",
@@ -111,7 +117,22 @@ export function AboutSection() {
                   transition={{ delay: index * 0.2 }}
                   className="flex items-center justify-center"
                 >
-                  <a
+                  {index === 0 ? (
+                    <LinkPreview url={link.href} className="p-2 rounded-full bg-accent hover:bg-accent/80 transition-colors">
+                      <link.icon className="h-5 w-5 hover:scale-110 transition-transform" />
+                    </LinkPreview>
+                  ) : (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-full bg-accent hover:bg-accent/80 transition-colors"
+                      aria-label={link.label}
+                    >
+                      <link.icon className="h-5 w-5 hover:scale-110 transition-transform" />
+                    </a>
+                  )}
+                  {/* <a
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -119,7 +140,7 @@ export function AboutSection() {
                     aria-label={link.label}
                   >
                     <link.icon className="h-5 w-5 hover:scale-110 transition-transform" />
-                  </a>
+                  </a> */}
                 </motion.div>
               ))}
             </div>
