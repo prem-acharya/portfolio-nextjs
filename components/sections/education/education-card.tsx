@@ -47,7 +47,7 @@ export function EducationCard({
             <div className="w-14 h-10 p-2 bg-gray-100 dark:bg-accent/80 rounded-md flex items-center justify-center text-foreground dark:text-foreground-400">
               {icon}
             </div>
-            <LinkPreview url={institutionUrl} className="text-blue-600 dark:text-blue-400">
+            <LinkPreview url={institutionUrl}>
             <div className="ml-4">
               <div className="lg:text-xl md:text-lg sm:text-sm font-bold text-foreground-900 dark:text-white">{degree}</div>
               <p className="text-blue-600 dark:text-blue-400">{institution}</p>
