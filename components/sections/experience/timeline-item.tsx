@@ -1,33 +1,77 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Timeline } from "@/components/ui/timeline";
+import { LinkPreview } from "@/components/ui/link-preview";
 
-interface TimelineItemProps {
-  title: string;
-  company: string;
-  date: string;
-  description: string;
-  index: number;
-}
+export function TimelineItem() {
 
-export function TimelineItem({ title, company, date, description, index }: TimelineItemProps) {
+  const experiences = [
+    {
+      title: "React Developer",
+      company: "Credsoft Technologies",
+      url: "https://credsofttechnologies.com",
+      date: "February 2024 - Present",
+      description: "As a React developer at Credsoft Technologies, We create dynamic and user-friendly web applications. With experience in technologies like Next.js, Node.js, and many more.",
+    },
+    // {
+    //   title: "Full Stack Developer",
+    //   company: "Digital Solutions Inc",
+    //   date: "2019 - 2021",
+    //   description: "Developed and maintained full-stack applications using Node.js and React. Improved application performance by 40%.",
+    // },
+    // {
+    //   title: "Junior Developer",
+    //   company: "StartUp Labs",
+    //   date: "2018 - 2019",
+    //   description: "Collaborated on various web development projects and gained expertise in modern JavaScript frameworks.",
+    // },
+  ];
+  
+  const data = [
+    {
+      title: experiences[0].title,
+      content: (
+        <div className="space-y-2">
+          <LinkPreview url={experiences[0].url}>
+          <span className="text-sm text-foreground">{experiences[0].date}</span>
+            <h3 className="text-lg text-blue-500 dark:text-blue-400 font-medium ">{experiences[0].company}</h3>
+          </LinkPreview>
+          <p className="text-muted-foreground">{experiences[0].description}</p>
+        </div>
+      ),
+    },
+    // {
+    //   title: experiences[1].title,
+    //   content: (
+    //     <div className="space-y-2">
+    //       <span className="text-sm text-foreground">{experiences[1].date}</span>
+    //       <h3 className="text-lg text-blue-500 dark:text-blue-400 font-medium ">{experiences[1].company}</h3>
+    //       <p className="text-muted-foreground">{experiences[1].description}</p>
+    //     </div>
+    //   ),
+    // },
+    // {
+    //   title: experiences[2].title,
+    //   content: (
+    //     <div className="space-y-2">
+    //       <span className="text-sm text-foreground">{experiences[2].date}</span>
+    //       <h3 className="text-lg text-blue-500 dark:text-blue-400 font-medium ">{experiences[2].company}</h3>
+    //       <p className="text-muted-foreground">{experiences[2].description}</p>
+    //     </div>
+    //   ),
+    // },
+  ];
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.2 }}
-      className="relative pl-8 pb-12 last:pb-0"
+      transition={{ delay: 0.3 }}
+      className="relative pb-12 last:pb-0"
     >
-      <div className="absolute left-0 top-0 h-full w-[2px] bg-border">
-        <div className="absolute left-[-5px] top-2 h-3 w-3 rounded-full bg-primary" />
-      </div>
-      <div className="space-y-2">
-        <span className="text-sm text-muted-foreground">{date}</span>
-        <h3 className="text-xl font-semibold">{title}</h3>
-        <p className="text-primary font-medium">{company}</p>
-        <p className="text-muted-foreground">{description}</p>
-      </div>
+      <Timeline data={data} />
     </motion.div>
   );
 }
