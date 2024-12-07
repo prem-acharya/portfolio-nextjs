@@ -104,21 +104,23 @@ export function Navbar() {
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               className="p-2 rounded-full hover:bg-accent transition-colors mr-2"
+              aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
             >
               {theme === 'dark' ? (
-                <Sun className="h-5 w-5" />
+                <Sun className="h-5 w-5" aria-hidden="true" />
               ) : (
-                <Moon className="h-5 w-5" />
+                <Moon className="h-5 w-5" aria-hidden="true" />
               )}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg hover:bg-accent transition-colors"
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
             >
               {isOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-6 w-6" aria-hidden="true" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6" aria-hidden="true" />
               )}
             </button>
           </div>
