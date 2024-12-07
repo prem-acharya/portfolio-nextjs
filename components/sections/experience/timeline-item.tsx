@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Timeline } from "@/components/ui/timeline";
-import { LinkPreview } from "@/components/ui/link-preview";
 
 export function TimelineItem() {
 
@@ -10,7 +9,6 @@ export function TimelineItem() {
     {
       title: "React Developer",
       company: "Credsoft Technologies",
-      url: "https://credsofttechnologies.com",
       date: "February 2024 - Present",
       description: "As a React developer at Credsoft Technologies, We create dynamic and user-friendly web applications. With experience in technologies like Next.js, Node.js, and many more.",
     },
@@ -33,10 +31,8 @@ export function TimelineItem() {
       title: experiences[0].title,
       content: (
         <div className="space-y-2">
-          <LinkPreview url={experiences[0].url}>
           <span className="text-sm text-foreground">{experiences[0].date}</span>
-            <h3 className="text-lg text-blue-500 dark:text-blue-400 font-medium ">{experiences[0].company}</h3>
-          </LinkPreview>
+          <h3 className="text-lg text-blue-500 dark:text-blue-400 font-medium ">{experiences[0].company}</h3>
           <p className="text-muted-foreground">{experiences[0].description}</p>
         </div>
       ),
