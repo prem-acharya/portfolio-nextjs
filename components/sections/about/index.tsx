@@ -14,16 +14,16 @@ import { Github, Linkedin, Mail, Twitter, Instagram } from "lucide-react";
 export function AboutSection() {
 
   const socialLinks = [
-    {
-      icon: Github,
-      href: "https://github.com/prem-acharya",
-      label: "GitHub",
-    },
     // {
     //   icon: Github,
-    //   href: "https://github.com/premacharya15",
+    //   href: "https://github.com/prem-acharya",
     //   label: "GitHub",
     // },
+    {
+      icon: Github,
+      href: "https://github.com/premacharya15",
+      label: "GitHub",
+    },
     {
       icon: Linkedin,
       href: "https://www.linkedin.com/in/prem-acharya-38772822b/",
@@ -34,11 +34,11 @@ export function AboutSection() {
       href: "https://x.com/prem__acharya",
       label: "Twitter",
     },
-    {
-      icon: Instagram,
-      href: "https://www.instagram.com/_premacharya/",
-      label: "Instagram",
-    },
+    // {
+    //   icon: Instagram,
+    //   href: "https://www.instagram.com/_premacharya/",
+    //   label: "Instagram",
+    // },
     {
       icon: Mail,
       href: "mailto:premacharya2193@gmail.com",
@@ -84,7 +84,7 @@ export function AboutSection() {
       <div className="max-w-5xl mx-auto">
         <SectionHeading
           title="About Me"
-          subtitle="Passionate about creating innovative solutions"
+          subtitle="Focused on building practical and innovative solutions"
         />
 
         <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -96,14 +96,10 @@ export function AboutSection() {
             className="space-y-4"
           >
             <p className="text-lg">
-              I'm a full-stack developer with a passion for building beautiful,
-              functional, and user-friendly applications. With expertise in modern
-              web technologies, I create solutions that make a difference.
+            I'm a full-stack developer who enjoys creating functional and user-friendly applications. I use modern web technologies to develop solutions that solve real problems.
             </p>
             <p className="text-lg text-muted-foreground">
-              When I'm not coding, you can find me exploring new technologies,
-              contributing to open-source projects, or sharing knowledge with the
-              developer community.
+            When I'm not coding, I explore new technologies, stay updated with industry trends, and experiment with personal projects to apply what I've learned.
             </p>
             <div className="flex gap-4 py-4 justify-center md:justify-start">
               

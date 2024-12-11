@@ -19,6 +19,7 @@ export function EducationCard({
   degree,
   institution,
   duration,
+  year,
   description,
   courses,
   gpa,
@@ -47,10 +48,10 @@ export function EducationCard({
             <div className="ml-4">
               <div className="lg:text-xl md:text-lg sm:text-sm font-bold text-foreground-900 dark:text-white">{degree}</div>
               <p className="text-blue-600 dark:text-blue-400">{institution}</p>
-              {/* <div className="flex items-center text-gray-600 dark:text-gray-300 text-sm justify-start mt-2">
+              <div className="flex items-center text-gray-600 dark:text-gray-300 text-sm justify-start mt-2">
                 {dateIcon}
-                <span className="ml-2">{duration}</span>
-              </div> */}
+                <span className="ml-2">{year}</span>
+              </div>
             </div>
           </div>
         </div>

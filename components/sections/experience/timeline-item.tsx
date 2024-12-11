@@ -7,17 +7,17 @@ export function TimelineItem() {
 
   const experiences = [
     {
-      title: "React Developer",
+      title: "Full Stack Developer",
       company: "Credsoft Technologies",
       date: "February 2024 - Present",
-      description: "As a React developer at Credsoft Technologies, We create dynamic and user-friendly web applications. With experience in technologies like Next.js, Node.js, and many more.",
+      description: "At Credsoft Technologies, I work as a Full Stack Developer, building functional and user-friendly web applications using tools like React, Next, Node and many more.",
     },
-    // {
-    //   title: "Full Stack Developer",
-    //   company: "Digital Solutions Inc",
-    //   date: "2019 - 2021",
-    //   description: "Developed and maintained full-stack applications using Node.js and React. Improved application performance by 40%.",
-    // },
+    {
+      title: "React JS Intern",
+      company: "InfiniteAI Technology Private Limited",
+      date: "2022 ( 2 Months )",
+      description: "I completed an internship at InfiniteAI Technology Private Limited, where I worked with React.js and Tailwind CSS. During this time, I gained hands-on experience and learned the fundamentals of React JS.",
+    },
     // {
     //   title: "Junior Developer",
     //   company: "StartUp Labs",
@@ -37,16 +37,16 @@ export function TimelineItem() {
         </div>
       ),
     },
-    // {
-    //   title: experiences[1].title,
-    //   content: (
-    //     <div className="space-y-2">
-    //       <span className="text-sm text-foreground">{experiences[1].date}</span>
-    //       <h3 className="text-lg text-blue-500 dark:text-blue-400 font-medium ">{experiences[1].company}</h3>
-    //       <p className="text-muted-foreground">{experiences[1].description}</p>
-    //     </div>
-    //   ),
-    // },
+    {
+      title: experiences[1].title,
+      content: (
+        <div className="space-y-2">
+          <span className="text-sm text-foreground">{experiences[1].date}</span>
+          <h3 className="text-lg text-blue-500 dark:text-blue-400 font-medium ">{experiences[1].company}</h3>
+          <p className="text-muted-foreground">{experiences[1].description}</p>
+        </div>
+      ),
+    },
     // {
     //   title: experiences[2].title,
     //   content: (

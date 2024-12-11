@@ -27,8 +27,11 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-            Hi, I'm Prem Acharya
+          <h1 className="text-4xl md:text-6xl font-bold mb-1 text-blue-500 hover">
+            Prem Acharya
+          </h1>
+          <h1 className="text-lg font-medium mb-6">
+            Full Stack Developer
           </h1>
         </motion.div>
 
