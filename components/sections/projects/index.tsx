@@ -6,6 +6,7 @@ import { ProjectCard } from "./project-card";
 const projects = [
   {
     title: "E-commerce Platform",
+    type: "Personal",
     description: "A modern e-commerce platform built with Next.js and Stripe integration.",
     image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=450&fit=crop",
     tags: ["Next.js", "TypeScript", "Stripe", "Tailwind CSS"],
@@ -14,6 +15,7 @@ const projects = [
   },
   {
     title: "Task Management App",
+    type: "Personal",
     description: "A collaborative task management application with real-time updates.",
     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=450&fit=crop",
     tags: ["React", "Node.js", "Socket.io", "MongoDB"],
@@ -22,6 +24,7 @@ const projects = [
   },
   {
     title: "AI Image Generator",
+    type: "Personal",
     description: "An AI-powered image generation tool using DALL-E API.",
     image: "https://images.unsplash.com/photo-1547954575-855750c57bd3?w=800&h=450&fit=crop",
     tags: ["OpenAI", "React", "Express", "AWS"],
