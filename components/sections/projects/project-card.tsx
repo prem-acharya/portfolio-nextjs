@@ -1,13 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
   title: string;
   type: string;
+  demo: boolean;
   description: string;
   image: string;
   tags: string[];
@@ -19,6 +21,7 @@ interface ProjectCardProps {
 export function ProjectCard({
   title,
   type,
+  demo,
   description,
   image,
   tags,
@@ -59,7 +62,7 @@ export function ProjectCard({
         <div className="flex gap-4">
           <Button variant="outline" size="sm" asChild>
             <a href={demoUrl} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="h-4 w-4 mr-2" />
+              <span className={cn("rounded-full w-3 h-3 mr-2 animate-pulse", demo ? "bg-green-500" : "bg-red-500 to-red-600")}></span>
               Demo
             </a>
           </Button>
