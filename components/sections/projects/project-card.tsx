@@ -31,11 +31,11 @@ export function ProjectCard({
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.2 }}
-      className="group relative bg-card rounded-lg overflow-hidden"
+      transition={{ delay: index * 0.1 }}
+      className="group relative bg-background/100 rounded-lg overflow-hidden"
     >
       <div className="aspect-video relative overflow-hidden">
-        <span className="absolute top-2 right-2 z-10 bg-primary/70 text-background font-semibold px-2 py-1 rounded-full text-xs">{type}</span>
+        <span className="absolute top-2 right-2 z-10 bg-background/70 text-foreground font-semibold px-2 py-1 rounded-full text-xs">{type}</span>
         <Image
           src={image}
           alt={title}

@@ -2,6 +2,13 @@
 
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ProjectCard } from "./project-card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const projects = [
   {
@@ -31,6 +38,15 @@ const projects = [
     demoUrl: "https://demo-ai-gen.example.com",
     githubUrl: "https://github.com/username/ai-gen",
   },
+  {
+    title: "Task Management App",
+    type: "Personal",
+    description: "A collaborative task management application with real-time updates.",
+    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=450&fit=crop",
+    tags: ["React", "Node.js", "Socket.io", "MongoDB"],
+    demoUrl: "https://demo-tasks.example.com",
+    githubUrl: "https://github.com/username/tasks",
+  },
 ];
 
 export function ProjectsSection() {
@@ -42,15 +58,25 @@ export function ProjectsSection() {
           subtitle="Some of my recent work"
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={project.title}
-              {...project}
-              index={index}
-            />
-          ))}
-        </div>
+        <Carousel
+          opts={{
+            align: "start",
+          }}
+          className="w-full"
+        >
+          <CarouselContent>
+            {projects.map((project, index) => (
+              <CarouselItem key={`${project.title}-${index}`} className="md:basis-1/2 lg:basis-1/3">
+                <ProjectCard
+                  {...project}
+                  index={index}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
     </section>
   );
