@@ -32,16 +32,6 @@ const projects = [
     githubUrl: "https://github.com/prem-acharya/notes-app",
   },
   {
-    title: "Todo List",
-    type: "Personal",
-    demo: true,
-    description: "web app where users can register, login, and manage their to-do lists with the ability to upload images.",
-    image: "/images/projects/project3.webp",
-    tags: ["React", "Firebase", "Tailwind CSS", "Material UI"],
-    demoUrl: "https://todo-app-bf450.web.app/",
-    githubUrl: "https://github.com/prem-acharya/Todo-List---React",
-  },
-  {
     title: "Buy Phones Plugin",
     type: "Personal",
     demo: false,
@@ -50,6 +40,16 @@ const projects = [
     tags: ["PHP", "WordPress", "JavaScript", "CSS"],
     demoUrl: "#",
     githubUrl: "https://github.com/prem-acharya/buy_phones_plugin",
+  },
+  {
+    title: "Todo List",
+    type: "Personal",
+    demo: true,
+    description: "web app where users can register, login, and manage their to-do lists with the ability to upload images.",
+    image: "/images/projects/project3.webp",
+    tags: ["React", "Firebase", "Tailwind CSS", "Material UI"],
+    demoUrl: "https://todo-app-bf450.web.app/",
+    githubUrl: "https://github.com/prem-acharya/Todo-List---React",
   },
   {
     title: "Home Automation",
