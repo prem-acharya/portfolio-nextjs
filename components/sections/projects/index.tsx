@@ -2,31 +2,74 @@
 
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ProjectCard } from "./project-card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const projects = [
   {
-    title: "E-commerce Platform",
-    description: "A modern e-commerce platform built with Next.js and Stripe integration.",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=450&fit=crop",
-    tags: ["Next.js", "TypeScript", "Stripe", "Tailwind CSS"],
-    demoUrl: "https://demo-ecommerce.example.com",
-    githubUrl: "https://github.com/username/ecommerce",
+    title: "Resume Builder",
+    type: "Personal",
+    demo: true,
+    description: "Built a web app enabling users to create, customize, and download professional resumes with a real-time preview.",
+    image: "/images/projects/project1.webp",
+    tags: ["React", "Tailwind CSS", "JavaScript", "PDF Export"],
+    demoUrl: "https://resume-builder-e50cb.web.app",
+    githubUrl: "https://github.com/prem-acharya/Resume_Builder---React",
   },
   {
-    title: "Task Management App",
-    description: "A collaborative task management application with real-time updates.",
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=450&fit=crop",
-    tags: ["React", "Node.js", "Socket.io", "MongoDB"],
-    demoUrl: "https://demo-tasks.example.com",
-    githubUrl: "https://github.com/username/tasks",
+    title: "Notes App",
+    type: "Personal",
+    demo: false,
+    description: "A notes app for organizing, managing, and scanning documents with many more features.",
+    image: "/images/projects/project2.webp",
+    tags: ["React", "Firebase", "Tailwind CSS", "Emotion CSS"],
+    demoUrl: "#",
+    githubUrl: "https://github.com/prem-acharya/notes-app",
   },
   {
-    title: "AI Image Generator",
-    description: "An AI-powered image generation tool using DALL-E API.",
-    image: "https://images.unsplash.com/photo-1547954575-855750c57bd3?w=800&h=450&fit=crop",
-    tags: ["OpenAI", "React", "Express", "AWS"],
-    demoUrl: "https://demo-ai-gen.example.com",
-    githubUrl: "https://github.com/username/ai-gen",
+    title: "Buy Phones Plugin",
+    type: "Personal",
+    demo: false,
+    description: "Built a WordPress plugin to manage phone sales and inventory with seamless admin controls.",
+    image: "/images/projects/project4.webp",
+    tags: ["PHP", "WordPress", "JavaScript", "CSS"],
+    demoUrl: "#",
+    githubUrl: "https://github.com/prem-acharya/buy_phones_plugin",
+  },
+  {
+    title: "Todo List",
+    type: "Personal",
+    demo: true,
+    description: "web app where users can register, login, and manage their to-do lists with the ability to upload images.",
+    image: "/images/projects/project3.webp",
+    tags: ["React", "Firebase", "Tailwind CSS", "Material UI"],
+    demoUrl: "https://todo-app-bf450.web.app/",
+    githubUrl: "https://github.com/prem-acharya/Todo-List---React",
+  },
+  {
+    title: "Home Automation",
+    type: "Personal",
+    demo: false,
+    description: "A system to control and monitor home devices such as AC, TV with real-time temperature and humidity tracking.",
+    image: "/images/projects/project5.webp",
+    tags: ["PHP", "JavaScript", "ESP8266", "ArduinoIDE"],
+    demoUrl: "#",
+    githubUrl: "https://github.com/prem-acharya/Home-Automation---PHP-Dashboard",
+  },
+  {
+    title: "Restaurant Websites",
+    type: "Personal",
+    demo: false,
+    description: "Built a restaurant website to display food categories, manage a shopping cart, and generate bills for orders.",
+    image: "/images/projects/project6.webp",
+    tags: ["PHP", "MySQL", "JavaScript", "CSS"],
+    demoUrl: "#",
+    githubUrl: "https://github.com/prem-acharya/Restaurant_Websites---PHP",
   },
 ];
 
@@ -39,15 +82,25 @@ export function ProjectsSection() {
           subtitle="Some of my recent work"
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={project.title}
-              {...project}
-              index={index}
-            />
-          ))}
-        </div>
+        <Carousel
+          opts={{
+            align: "start",
+          }}
+          className="w-full"
+        >
+          <CarouselContent>
+            {projects.map((project, index) => (
+              <CarouselItem key={`${project.title}-${index}`} className="md:basis-1/2 lg:basis-1/3">
+                <ProjectCard
+                  {...project}
+                  index={index}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
     </section>
   );

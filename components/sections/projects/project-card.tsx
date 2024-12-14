@@ -1,12 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
   title: string;
+  type: string;
+  demo: boolean;
   description: string;
   image: string;
   tags: string[];
@@ -17,6 +20,8 @@ interface ProjectCardProps {
 
 export function ProjectCard({
   title,
+  type,
+  demo,
   description,
   image,
   tags,
@@ -29,14 +34,17 @@ export function ProjectCard({
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.2 }}
-      className="group relative bg-card rounded-lg overflow-hidden"
+      transition={{ delay: index * 0.1 }}
+      className="group relative bg-background/100 rounded-lg overflow-hidden"
     >
-      <div className="aspect-video relative overflow-hidden">
+      <div className="aspect-video relative overflow-hidden brightness-95">
+        <span className="absolute top-2 right-2 z-10 bg-background/70 text-foreground font-semibold px-2 py-1 rounded-full text-xs">{type}</span>
         <Image
           src={image}
           alt={title}
-          fill
+          width={800}
+          height={450}
+          priority
           className="object-cover transition-transform group-hover:scale-105"
         />
       </div>
@@ -54,11 +62,18 @@ export function ProjectCard({
           ))}
         </div>
         <div className="flex gap-4">
-          <Button variant="outline" size="sm" asChild>
-            <a href={demoUrl} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="h-4 w-4 mr-2" />
-              Demo
-            </a>
+          <Button variant="outline" size="sm" asChild className={cn(demo ? "" : "cursor-not-allowed")}>
+            {demo ? (
+              <a href={demoUrl} target="_blank" rel="noopener noreferrer">
+                <span className="rounded-full w-3 h-3 mr-2 animate-pulse bg-green-500"></span>
+                Demo
+              </a>
+            ) : (
+              <a rel="noopener noreferrer">
+                <span className="rounded-full w-3 h-3 mr-2 animate-pulse bg-red-500 to-red-600"></span>
+                Demo
+              </a>
+            )}
           </Button>
           <Button variant="outline" size="sm" asChild>
             <a href={githubUrl} target="_blank" rel="noopener noreferrer">
