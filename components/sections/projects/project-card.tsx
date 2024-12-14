@@ -37,7 +37,7 @@ export function ProjectCard({
       transition={{ delay: index * 0.1 }}
       className="group relative bg-background/100 rounded-lg overflow-hidden"
     >
-      <div className="aspect-video relative overflow-hidden hover:brightness-90">
+      <div className="aspect-video relative overflow-hidden brightness-95">
         <span className="absolute top-2 right-2 z-10 bg-background/70 text-foreground font-semibold px-2 py-1 rounded-full text-xs">{type}</span>
         <Image
           src={image}
