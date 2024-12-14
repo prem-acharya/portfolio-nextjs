@@ -51,6 +51,26 @@ const projects = [
     demoUrl: "#",
     githubUrl: "https://github.com/prem-acharya/buy_phones_plugin",
   },
+  {
+    title: "Home Automation",
+    type: "Personal",
+    demo: false,
+    description: "A system to control and monitor home devices such as AC, TV with real-time temperature and humidity tracking.",
+    image: "/images/projects/project5.webp",
+    tags: ["PHP", "JavaScript", "ESP8266", "ArduinoIDE"],
+    demoUrl: "#",
+    githubUrl: "https://github.com/prem-acharya/Home-Automation---PHP-Dashboard",
+  },
+  {
+    title: "Restaurant Websites",
+    type: "Personal",
+    demo: false,
+    description: "Built a restaurant website to display food categories, manage a shopping cart, and generate bills for orders.",
+    image: "/images/projects/project6.webp",
+    tags: ["PHP", "MySQL", "JavaScript", "CSS"],
+    demoUrl: "#",
+    githubUrl: "https://github.com/prem-acharya/Restaurant_Websites---PHP",
+  },
 ];
 
 export function ProjectsSection() {
