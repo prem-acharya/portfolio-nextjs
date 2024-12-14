@@ -42,7 +42,9 @@ export function ProjectCard({
         <Image
           src={image}
           alt={title}
-          fill
+          width={800}
+          height={450}
+          priority
           className="object-cover transition-transform group-hover:scale-105"
         />
       </div>
@@ -60,11 +62,18 @@ export function ProjectCard({
           ))}
         </div>
         <div className="flex gap-4">
-          <Button variant="outline" size="sm" asChild>
-            <a href={demoUrl} target="_blank" rel="noopener noreferrer">
-              <span className={cn("rounded-full w-3 h-3 mr-2 animate-pulse", demo ? "bg-green-500" : "bg-red-500 to-red-600")}></span>
-              Demo
-            </a>
+          <Button variant="outline" size="sm" asChild className={cn(demo ? "" : "cursor-not-allowed")}>
+            {demo ? (
+              <a href={demoUrl} target="_blank" rel="noopener noreferrer">
+                <span className="rounded-full w-3 h-3 mr-2 animate-pulse bg-green-500"></span>
+                Demo
+              </a>
+            ) : (
+              <a rel="noopener noreferrer">
+                <span className="rounded-full w-3 h-3 mr-2 animate-pulse bg-red-500 to-red-600"></span>
+                Demo
+              </a>
+            )}
           </Button>
           <Button variant="outline" size="sm" asChild>
             <a href={githubUrl} target="_blank" rel="noopener noreferrer">
