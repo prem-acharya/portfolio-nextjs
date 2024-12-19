@@ -80,7 +80,7 @@ export function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-20 px-4">
+    <section id="about" className="py-20 md:py-32 px-4">
       <div className="max-w-5xl mx-auto">
         <SectionHeading
           title="About Me"

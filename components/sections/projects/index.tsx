@@ -75,7 +75,7 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 px-4 bg-accent/50">
+    <section id="projects" className="py-20 md:py-32 px-4 bg-accent/50">
       <div className="max-w-6xl mx-auto">
         <SectionHeading
           title="Projects"
