@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Moon, Sun, Menu, X, Home, User, GraduationCap, ChartNoAxesCombined, FileCode2, ContactRound } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { defaultConfig } from 'next/dist/server/config-shared';
 import Image from 'next/image';
@@ -10,12 +10,12 @@ import logo from '@/public/logo.webp';
 import logoHover from '@/public/logo3.webp';
 
 const navItems = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Education', href: '#education' },
-  { name: 'Projects', href: '#projects' },
-  // { name: 'Contact', href: '#contact' },
+  { name: 'Home', href: '#home', icon: Home },
+  { name: 'About', href: '#about', icon: User },
+  { name: 'Experience', href: '#experience', icon: ChartNoAxesCombined },
+  { name: 'Education', href: '#education', icon: GraduationCap },
+  { name: 'Projects', href: '#projects', icon: FileCode2 },
+  // { name: 'Contact', href: '#contact', icon: ContactRound },
 ];
 
 export function Navbar() {
@@ -149,17 +149,17 @@ export function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0, x: '-100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '-100%' }}
             className="md:hidden"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-background/80">
+            <div className="px-2 pt-6 pb-[56vh] space-y-4 bg-background/80">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  className={`block px-3 py-4 rounded-md text-base font-medium ${
                     activeSection === item.name.toLowerCase()
                       ? 'text-primary bg-accent'
                       : 'text-muted-foreground hover:text-primary hover:bg-accent'
@@ -171,7 +171,10 @@ export function Navbar() {
                     });
                   }}
                 >
-                  {item.name}
+                  <div className="flex gap-2">
+                    <item.icon className="mr-2 h-6 w-6" />
+                    {item.name}
+                  </div>
                 </a>
               ))}
             </div>
