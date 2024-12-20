@@ -44,7 +44,7 @@ export function ProjectCard({
           alt={title}
           width={800}
           height={450}
-          priority
+          priority={index === 0}
           className="object-cover transition-transform group-hover:scale-105"
         />
       </div>
