@@ -61,9 +61,9 @@ export function Navbar() {
                 className="relative w-full h-full"
               >
                 {isHovering ? (
-                  <Image src={logoHover} alt="LogoHover" layout="fill" />
+                  <Image src={logoHover} alt="LogoHover" layout="fill" priority />
                 ) : (
-                  <Image src={logo} alt="Logo" layout="fill" />
+                  <Image src={logo} alt="Logo" layout="fill" priority />
                 )}
               </motion.div>
             </span>
