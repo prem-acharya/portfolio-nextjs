@@ -7,8 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { defaultConfig } from 'next/dist/server/config-shared';
 import Image from 'next/image';
 import logo from '@/public/logo.webp';
-import logoHover from '@/public/logo1.webp';
-import logo1 from '@/public/logo2.webp';
+import logoHover from '@/public/logo3.webp';
 
 const navItems = [
   { name: 'Home', href: '#home' },
