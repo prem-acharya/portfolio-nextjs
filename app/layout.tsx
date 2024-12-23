@@ -43,7 +43,7 @@ export const metadata: ExtendedMetadata = {
     // site_name: 'Prem Acharya Portfolio',
     images: [
       {
-        url: '/site_img.webp',
+        url: 'https://premacharya.vercel.app/site_img.webp',
         width: 800,
         height: 600,
         alt: 'Prem Acharya Portfolio Image',
@@ -54,7 +54,7 @@ export const metadata: ExtendedMetadata = {
     card: 'summary_large_image',
     title: 'Prem Acharya | Full-Stack Developer & React, Next.js Enthusiast',
     description: 'Discover Prem Acharya\'s portfolio featuring innovative web development, enthusiasm for React.js and Next.js, and scalable full-stack solutions for modern businesses.',
-    image: '/site_img.webp',
+    image: 'https://premacharya.vercel.app/site_img.webp',
   },
 };
 
