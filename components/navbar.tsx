@@ -8,6 +8,7 @@ import { defaultConfig } from 'next/dist/server/config-shared';
 import Image from 'next/image';
 import logo from '@/public/logo.webp';
 import logoHover from '@/public/logo3.webp';
+import { useModeAnimation } from '@/hooks/useModeAnimation';
 
 const navItems = [
   { name: 'Home', href: '#home', icon: Home },
@@ -24,6 +25,27 @@ export function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
   const [isHovering , setIsHovering] = useState(false);
   const { theme, setTheme } = useTheme();
+  const { ref: refDesktop, toggleSwitchTheme: toggleDesktopSwitchTheme, isDarkMode: isDesktopDarkMode } = useModeAnimation({
+    duration: 750,
+    globalClassName: 'dark',
+  });
+
+
+  const handleDesktopThemeToggle = async () => {
+    await toggleDesktopSwitchTheme();
+    setTheme(isDesktopDarkMode ? 'light' : 'dark');
+  }
+
+  const { ref: refMobile, toggleSwitchTheme: toggleMobileSwitchTheme, isDarkMode: isMobileDarkMode } = useModeAnimation({
+    duration: 750,
+    globalClassName: 'dark',
+  });
+
+
+  const handleMobileThemeToggle = async () => {
+    await toggleMobileSwitchTheme();
+    setTheme(isMobileDarkMode ? 'light' : 'dark');
+  }
 
   useEffect(() => {
     setMounted(true);
@@ -105,7 +127,8 @@ export function Navbar() {
               </a>
             ))}
             <button
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              ref={refDesktop}
+              onClick={handleDesktopThemeToggle}
               className="p-2 rounded-full hover:bg-accent transition-colors"
               aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
             >
@@ -120,7 +143,8 @@ export function Navbar() {
           {/* Mobile Navigation Button */}
           <div className="md:hidden flex items-center">
             <button
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              ref={refMobile}
+              onClick={handleMobileThemeToggle}
               className="p-2 rounded-full hover:bg-accent transition-colors mr-2"
               aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
             >
