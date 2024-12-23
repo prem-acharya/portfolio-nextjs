@@ -8,6 +8,7 @@ import { defaultConfig } from 'next/dist/server/config-shared';
 import Image from 'next/image';
 import logo from '@/public/logo.webp';
 import logoHover from '@/public/logo3.webp';
+import { useModeAnimation } from '@/hooks/useModeAnimation';
 
 const navItems = [
   { name: 'Home', href: '#home', icon: Home },
@@ -24,6 +25,27 @@ export function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
   const [isHovering , setIsHovering] = useState(false);
   const { theme, setTheme } = useTheme();
+  const { ref: refDesktop, toggleSwitchTheme: toggleDesktopSwitchTheme, isDarkMode: isDesktopDarkMode } = useModeAnimation({
+    duration: 750,
+    globalClassName: 'dark',
+  });
+
+
+  const handleDesktopThemeToggle = async () => {
+    await toggleDesktopSwitchTheme();
+    setTheme(isDesktopDarkMode ? 'light' : 'dark');
+  }
+
+  const { ref: refMobile, toggleSwitchTheme: toggleMobileSwitchTheme, isDarkMode: isMobileDarkMode } = useModeAnimation({
+    duration: 750,
+    globalClassName: 'dark',
+  });
+
+
+  const handleMobileThemeToggle = async () => {
+    await toggleMobileSwitchTheme();
+    setTheme(isMobileDarkMode ? 'light' : 'dark');
+  }
 
   useEffect(() => {
     setMounted(true);
@@ -105,7 +127,8 @@ export function Navbar() {
               </a>
             ))}
             <button
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              ref={refDesktop}
+              onClick={handleDesktopThemeToggle}
               className="p-2 rounded-full hover:bg-accent transition-colors"
               aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
             >
@@ -120,7 +143,8 @@ export function Navbar() {
           {/* Mobile Navigation Button */}
           <div className="md:hidden flex items-center">
             <button
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              ref={refMobile}
+              onClick={handleMobileThemeToggle}
               className="p-2 rounded-full hover:bg-accent transition-colors mr-2"
               aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
             >
@@ -151,11 +175,19 @@ export function Navbar() {
           <motion.div
             initial={{ opacity: 0, x: '-100%' }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '-100%' }}
+            exit={{ opacity: 0, x: '-10%' }}
+            transition={{ duration: 0.4 }}
             className="md:hidden"
           >
             <div className="px-2 pt-6 pb-[56vh] space-y-4 bg-background/80">
-              {navItems.map((item) => (
+              {navItems.map((item, index) => (
+                <motion.div
+                initial={{ opacity: 0, x: '-100%' }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: index * 0.5 }}
+                className="md:hidden"
+                key={item.name}
+              >
                 <a
                   key={item.name}
                   href={item.href}
@@ -176,6 +208,7 @@ export function Navbar() {
                     {item.name}
                   </div>
                 </a>
+              </motion.div>
               ))}
             </div>
           </motion.div>
