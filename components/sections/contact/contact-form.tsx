@@ -9,6 +9,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send, CheckCircle, XCircle } from "lucide-react";
 
+const BASE_URL = process.env.NEXT_BASE_URL || '';
+
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
@@ -28,7 +30,7 @@ export function ContactForm() {
     setIsSubmitting(true);
     setSubmitStatus(null);
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(`${BASE_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
