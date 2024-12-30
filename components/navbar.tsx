@@ -23,29 +23,27 @@ export function Navbar() {
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const [isHovering , setIsHovering] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
   const { theme, setTheme } = useTheme();
-  const { ref: refDesktop, toggleSwitchTheme: toggleDesktopSwitchTheme, isDarkMode: isDesktopDarkMode } = useModeAnimation({
+  const { ref: refDesktop, toggleSwitchTheme: toggleDesktopSwitchTheme } = useModeAnimation({
     duration: 750,
     globalClassName: 'dark',
   });
-
 
   const handleDesktopThemeToggle = async () => {
     await toggleDesktopSwitchTheme();
-    setTheme(isDesktopDarkMode ? 'light' : 'dark');
-  }
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
 
-  const { ref: refMobile, toggleSwitchTheme: toggleMobileSwitchTheme, isDarkMode: isMobileDarkMode } = useModeAnimation({
+  const { ref: refMobile, toggleSwitchTheme: toggleMobileSwitchTheme } = useModeAnimation({
     duration: 750,
     globalClassName: 'dark',
   });
 
-
   const handleMobileThemeToggle = async () => {
     await toggleMobileSwitchTheme();
-    setTheme(isMobileDarkMode ? 'light' : 'dark');
-  }
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
 
   useEffect(() => {
     setMounted(true);
