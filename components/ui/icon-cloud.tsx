@@ -10,6 +10,11 @@ import {
   SimpleIcon,
 } from "react-icon-cloud";
 
+export type DynamicCloudProps = {
+  iconSlugs?: string[]; // Made iconSlugs optional
+  imageArray?: string[];
+};
+
 export const cloudProps: Omit<ICloud, "children"> = {
   containerProps: {
     style: {
@@ -17,8 +22,7 @@ export const cloudProps: Omit<ICloud, "children"> = {
       justifyContent: "center",
       alignItems: "center",
       width: "100%",
-      maxWidth: "60vh",
-      // paddingTop: 40,
+      paddingTop: 40,
     },
   },
   options: {
@@ -38,7 +42,11 @@ export const cloudProps: Omit<ICloud, "children"> = {
   },
 };
 
-export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
+export const renderCustomIcon = (
+  icon: SimpleIcon,
+  theme: string,
+  imageArray?: string[],
+) => {
   const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
   const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
   const minContrastRatio = theme === "dark" ? 2 : 1.2;
@@ -53,23 +61,25 @@ export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
       href: undefined,
       target: undefined,
       rel: undefined,
-      onClick: (e: any) => e.preventDefault(),
+      onClick: (e: React.MouseEvent<HTMLAnchorElement>) => e.preventDefault(),
     },
   });
 };
 
-export type DynamicCloudProps = {
-  iconSlugs: string[];
-};
-
 type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
 
-export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
+export default function IconCloud({
+  iconSlugs = [], // Default to an empty array if not provided
+  imageArray,
+}: DynamicCloudProps) {
   const [data, setData] = useState<IconData | null>(null);
   const { theme } = useTheme();
 
   useEffect(() => {
-    fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
+    if (iconSlugs.length > 0) {
+      // Check if iconSlugs is not empty
+      fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
+    }
   }, [iconSlugs]);
 
   const renderedIcons = useMemo(() => {
@@ -82,8 +92,19 @@ export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
 
   return (
     // @ts-ignore
-    <Cloud {...cloudProps} id="icon-cloud">
-      <>{renderedIcons}</>
+    <Cloud {...cloudProps}>
+      <>
+        <>{renderedIcons}</>
+        {imageArray &&
+          imageArray.length > 0 &&
+          imageArray.map((image, index) => {
+            return (
+              <a key={index} href="#" onClick={(e) => e.preventDefault()}>
+                <img height="42" width="42" alt="A globe" src={image} />
+              </a>
+            );
+          })}
+      </>
     </Cloud>
   );
 }
