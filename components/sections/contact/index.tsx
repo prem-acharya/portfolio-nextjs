@@ -21,11 +21,11 @@ const socialLinks = [
     href: "https://x.com/prem__acharya",
     label: "Twitter",
   },
-  {
-    icon: Instagram,
-    href: "https://www.instagram.com/_premacharya/",
-    label: "Instagram",
-  },
+  // {
+  //   icon: Instagram,
+  //   href: "https://www.instagram.com/_premacharya/",
+  //   label: "Instagram",
+  // },
   {
     icon: Mail,
     href: "mailto:premacharya2193@gmail.com",

@@ -71,7 +71,7 @@ export function Navbar() {
   if (!mounted) return null;
 
   return (
-    <div className="fixed md:top-0 lg:top-8 inset-x-0 z-50 max-w-6xl mx-auto ">
+    <div className="fixed md:top-0 lg:top-8 inset-x-0 z-50 max-w-6xl lg:max-w-4xl mx-auto ">
     <nav className="w-full backdrop-blur-sm bg-background/80 border-b md:border-b lg:border border-foreground/40 lg:rounded-2xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <div className="flex justify-between items-center h-16">

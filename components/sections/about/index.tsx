@@ -74,7 +74,7 @@ export function AboutSection() {
     "github",
     "jira",
     "visualstudiocode",
-    "androidstudio",
+    "arduino",
     "redis",
     "figma",
   ];
