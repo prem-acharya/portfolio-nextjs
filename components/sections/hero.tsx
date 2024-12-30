@@ -64,7 +64,7 @@ export function HeroSection() {
             View Projects
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
-          {/* <Button
+          <Button
             size="lg"
             className="group bg-transparent text-default-foreground border border-default-foreground/20 hover:bg-default-foreground/10"
             onClick={() => {
@@ -75,7 +75,7 @@ export function HeroSection() {
           >
             Contact Me
             <User className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Button> */}
+          </Button>
         </motion.div>
       </div>
 
