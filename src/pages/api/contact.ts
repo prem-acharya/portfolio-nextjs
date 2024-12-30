@@ -17,6 +17,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       });
       res.status(201).json({ success: true, contact });
     } catch (error) {
+      console.error("Error saving data:", error);
       res.status(500).json({ success: false, error: 'Error saving data' });
     }
   } else {
