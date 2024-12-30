@@ -50,7 +50,6 @@ export function AboutSection() {
     "typescript",
     "javascript",
     "dart",
-    "java",
     "react",
     "flutter",
     "raspberrypi",
