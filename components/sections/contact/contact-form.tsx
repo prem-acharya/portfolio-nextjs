@@ -43,7 +43,6 @@ export function ContactForm() {
       setSubmitStatus('success');
       reset();
     } catch (error) {
-      console.error("Error saving data:", error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
