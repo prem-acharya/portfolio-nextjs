@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 import { flushSync } from 'react-dom'
 
 const isBrowser = typeof window !== 'undefined'
@@ -8,7 +8,6 @@ const isBrowser = typeof window !== 'undefined'
 interface ModeAnimationHook {
   ref: React.RefObject<HTMLButtonElement>
   toggleSwitchTheme: () => Promise<void>
-  isDarkMode: boolean
 }
 
 interface ModeAnimationOptions {
@@ -25,7 +24,7 @@ export const useModeAnimation = (props?: ModeAnimationOptions): ModeAnimationHoo
     pseudoElement = '::view-transition-new(root)',
     globalClassName = 'dark',
   } = props || {}
-  const [isDarkMode, setIsDarkMode] = useState(isBrowser ? localStorage.getItem('theme') === 'dark' : false)
+  
   const ref = useRef<HTMLButtonElement>(null)
 
   const toggleSwitchTheme = async () => {
@@ -34,13 +33,12 @@ export const useModeAnimation = (props?: ModeAnimationOptions): ModeAnimationHoo
       !(document as any).startViewTransition ||
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
     ) {
-      setIsDarkMode((isDarkMode) => !isDarkMode)
       return
     }
 
     await (document as any).startViewTransition(() => {
       flushSync(() => {
-        setIsDarkMode((isDarkMode) => !isDarkMode)
+        // Logic to toggle theme can be added here if needed
       })
     }).ready
 
@@ -63,19 +61,8 @@ export const useModeAnimation = (props?: ModeAnimationOptions): ModeAnimationHoo
     )
   }
 
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add(globalClassName)
-      localStorage.theme = 'dark'
-    } else {
-      document.documentElement.classList.remove(globalClassName)
-      localStorage.theme = 'light'
-    }
-  }, [isDarkMode])
-
   return {
     ref,
     toggleSwitchTheme,
-    isDarkMode,
   }
 }

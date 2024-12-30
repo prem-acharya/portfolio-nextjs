@@ -66,7 +66,7 @@ export function HeroSection() {
           </Button>
           <Button
             size="lg"
-            className="group bg-transparent text-default-foreground border border-default-foreground/20 hover:bg-default-foreground/10"
+            className="group bg-transparent text-default-foreground border-default-foreground/20 border-2 hover:bg-default-foreground/10"
             onClick={() => {
               document.querySelector('#contact')?.scrollIntoView({
                 behavior: 'smooth',
