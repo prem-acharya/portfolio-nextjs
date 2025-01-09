@@ -95,10 +95,10 @@ export function AboutSection() {
             className="space-y-4"
           >
             <p className="text-lg">
-            I'm a full-stack developer who enjoys creating functional and user-friendly applications. I use modern web technologies to develop solutions that solve real problems.
+            I&apos;m a full-stack developer who enjoys creating functional and user-friendly applications. I use modern web technologies to develop solutions that solve real problems.
             </p>
             <p className="text-lg text-muted-foreground">
-            When I'm not coding, I explore new technologies, stay updated with industry trends, and experiment with personal projects to apply what I've learned.
+            When I&apos;m not coding, I explore new technologies, stay updated with industry trends, and experiment with personal projects to apply what I&apos;ve learned.
             </p>
             <div className="flex gap-4 py-4 justify-center md:justify-start">
               
