@@ -16,7 +16,7 @@ const navItems = [
   { name: 'Experience', href: '#experience', icon: ChartNoAxesCombined },
   { name: 'Education', href: '#education', icon: GraduationCap },
   { name: 'Projects', href: '#projects', icon: FileCode2 },
-  // { name: 'Contact', href: '#contact', icon: ContactRound },
+  { name: 'Contact', href: '#contact', icon: ContactRound },
 ];
 
 export function Navbar() {
@@ -99,7 +99,7 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+            {navItems.slice(0, -1).map((item) => (
               <a
                 key={item.name}
                 href={item.href}
