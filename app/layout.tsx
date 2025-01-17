@@ -33,14 +33,13 @@ export const metadata: ExtendedMetadata = {
   icons: {
     icon: '/favicon.ico',
   },
-  title: 'Prem Acharya | Full-Stack Developer & React, Next.js Enthusiast',
-  description: 'Discover Prem Acharya\'s portfolio featuring innovative web development, enthusiasm for React.js and Next.js, and scalable full-stack solutions for modern businesses.',
-  keywords: 'Prem Acharya, full-stack developer, React developer, Next.js developer, web development portfolio, modern web design, freelance web developer, API integration, scalable web solutions',
+  title: 'Prem Acharya | Full-Stack Developer & React/Next.js Enthusiast',
+  description: 'Explore the portfolio of Prem Acharya, showcasing web development and expertise in React.js and Next.js.',
+  keywords: 'Prem Acharya, full stack developer, front end developer, backend developer, web design, developer, React js, Next js, web development',
   openGraph: {
-    title: 'Prem Acharya | Full-Stack Developer & React, Next.js Enthusiast',
-    description: 'Discover Prem Acharya\'s portfolio featuring innovative web development, enthusiasm for React.js and Next.js, and scalable full-stack solutions for modern businesses.',
+    title: 'Prem Acharya | Full-Stack Developer & React/Next.js Enthusiast',
+    description: 'Explore the portfolio of Prem Acharya, showcasing web development and expertise in React.js and Next.js.',
     url: 'https://premacharya.vercel.app/',
-    // site_name: 'Prem Acharya Portfolio',
     images: [
       {
         url: 'https://premacharya.vercel.app/site_img.webp',
@@ -52,8 +51,8 @@ export const metadata: ExtendedMetadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Prem Acharya | Full-Stack Developer & React, Next.js Enthusiast',
-    description: 'Discover Prem Acharya\'s portfolio featuring innovative web development, enthusiasm for React.js and Next.js, and scalable full-stack solutions for modern businesses.',
+    title: 'Prem Acharya | Full-Stack Developer & React/Next.js Enthusiast',
+    description: 'Explore the portfolio of Prem Acharya, showcasing web development and expertise in React.js and Next.js.',
     image: 'https://premacharya.vercel.app/site_img.webp',
   },
 };

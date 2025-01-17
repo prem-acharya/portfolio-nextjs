@@ -22,11 +22,11 @@ export function HeroSection() {
       {/* <WeatherCard /> */}
 
       <div className="relative z-10 text-center px-4">
-        <h1 className="text-4xl md:text-6xl font-bold mb-1 text-blue-500 hover">
+        <h1 className="text-3xl md:text-5xl font-bold mb-1 text-blue-500 hover">
           Prem Acharya
         </h1>
-        <h1 className="text-lg font-medium mb-6">Full Stack Developer</h1>
-        <p className="text-xl md:text-2xl text-muted-foreground mb-8">
+        <h1 className="text-sm md:text-md font-medium mb-6">Full Stack Developer</h1>
+        <p className="text-md md:text-lg text-muted-foreground mb-8">
           {/* Your code, your legacy! */}
           Building dreams in bytes!
         </p>
