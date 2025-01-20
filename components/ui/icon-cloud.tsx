@@ -45,7 +45,6 @@ export const cloudProps: Omit<ICloud, "children"> = {
 export const renderCustomIcon = (
   icon: SimpleIcon,
   theme: string,
-  imageArray?: string[],
 ) => {
   const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
   const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
@@ -58,10 +57,13 @@ export const renderCustomIcon = (
     minContrastRatio,
     size: 42,
     aProps: {
-      href: undefined,
+      href: "#",
       target: undefined,
       rel: undefined,
       onClick: (e: React.MouseEvent<HTMLAnchorElement>) => e.preventDefault(),
+      "aria-label": `${icon.title} icon`,
+      role: "button",
+      tabIndex: 0,
     },
   });
 };
@@ -86,7 +88,7 @@ export default function IconCloud({
     if (!data) return null;
 
     return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, theme || "light"),
+      renderCustomIcon(icon, theme || "light")
     );
   }, [data, theme]);
 
@@ -99,8 +101,15 @@ export default function IconCloud({
           imageArray.length > 0 &&
           imageArray.map((image, index) => {
             return (
-              <a key={index} href="#" onClick={(e) => e.preventDefault()}>
-                <img height="42" width="42" alt="A globe" src={image} />
+              <a
+                key={index}
+                href="#"
+                role="button"
+                aria-label={`Technology icon ${index + 1}`}
+                onClick={(e) => e.preventDefault()}
+                tabIndex={0}
+              >
+                <img height="42" width="42" alt="Technology icon" src={image} />
               </a>
             );
           })}
