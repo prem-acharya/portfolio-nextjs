@@ -42,10 +42,11 @@ export function ProjectCard({
         <Image
           src={image}
           alt={title}
-          width={800}
-          height={450}
+          width={400}
+          height={225}
           priority={index === 0}
           className="object-cover transition-transform group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
       <div className="p-6">

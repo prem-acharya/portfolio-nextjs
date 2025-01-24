@@ -2,13 +2,13 @@
 
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
-import IconCloud from "@/components/ui/icon-cloud";
+// import IconCloud from "@/components/ui/icon-cloud";
 import { Github, Linkedin, Mail, Twitter, Instagram } from "lucide-react";
-// import dynamic from "next/dynamic";
+import dynamic from "next/dynamic";
 
-// const IconCloud = dynamic(() => import("@/components/ui/icon-cloud"), {
-//   ssr: false,
-// });
+const IconCloud = dynamic(() => import("@/components/ui/icon-cloud"), {
+  ssr: false,
+});
 
 
 export function AboutSection() {
