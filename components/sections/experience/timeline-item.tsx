@@ -9,21 +9,21 @@ export function TimelineItem() {
     {
       title: "Full Stack Developer",
       company: "Credsoft Technologies",
-      date: "February 2024 - Present",
+      date: "Sep 2024 - Present",
       description: "At Credsoft Technologies, I work as a Full Stack Developer, building functional and user-friendly web applications using tools like React, Next, Node and many more.",
     },
     {
-      title: "React JS Intern",
+      title: "React Developer",
+      company: "Credsoft Technologies",
+      date: "Mar 2024 - Aug 2024 • 5 months",
+      description: "As a React Developer, I enhanced my skills in React, explored Node.js and Express, worked with MongoDB, and gained experience in API development and integration.",
+    },
+    {
+      title: "Web Developer",
       company: "InfiniteAI Technology Private Limited",
-      date: "2022 ( 2 Months )",
+      date: "May 2023 - Jun 2023 • 2 months",
       description: "I completed an internship at InfiniteAI Technology Private Limited, where I worked with React.js and Tailwind CSS. During this time, I gained hands-on experience and learned the fundamentals of React JS.",
     },
-    // {
-    //   title: "Junior Developer",
-    //   company: "StartUp Labs",
-    //   date: "2018 - 2019",
-    //   description: "Collaborated on various web development projects and gained expertise in modern JavaScript frameworks.",
-    // },
   ];
   
   const data = [
@@ -47,16 +47,16 @@ export function TimelineItem() {
         </div>
       ),
     },
-    // {
-    //   title: experiences[2].title,
-    //   content: (
-    //     <div className="space-y-2">
-    //       <span className="text-sm text-foreground">{experiences[2].date}</span>
-    //       <h3 className="text-lg text-blue-500 dark:text-blue-400 font-medium ">{experiences[2].company}</h3>
-    //       <p className="text-muted-foreground">{experiences[2].description}</p>
-    //     </div>
-    //   ),
-    // },
+    {
+      title: experiences[2].title,
+      content: (
+        <div className="space-y-2">
+          <span className="text-sm text-foreground">{experiences[2].date}</span>
+          <h3 className="text-lg text-blue-500 dark:text-blue-400 font-medium ">{experiences[2].company}</h3>
+          <p className="text-muted-foreground">{experiences[2].description}</p>
+        </div>
+      ),
+    },
   ];
 
   return (
