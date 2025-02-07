@@ -12,6 +12,16 @@ import {
 
 const projects = [
   {
+    title: "Social Media API",
+    type: "Personal",
+    demo: false,
+    description: "Developed a secure Node.js/Express REST API for social media with optimized performance features.",
+    image: "/images/projects/project6.webp",
+    tags: ["Node", "Express", "Redis", "MongoDB" ],
+    demoUrl: "#",
+    githubUrl: "https://github.com/premacharya15/social-media-api",
+  },
+  {
     title: "Resume Builder",
     type: "Personal",
     demo: true,
@@ -60,16 +70,6 @@ const projects = [
     tags: ["PHP", "JavaScript", "ESP8266", "ArduinoIDE"],
     demoUrl: "#",
     githubUrl: "https://github.com/prem-acharya/Home-Automation---PHP-Dashboard",
-  },
-  {
-    title: "Restaurant Websites",
-    type: "Personal",
-    demo: false,
-    description: "Built a restaurant website to display food categories, manage a shopping cart, and generate bills for orders.",
-    image: "/images/projects/project6.webp",
-    tags: ["PHP", "MySQL", "JavaScript", "CSS", "Razorpay"],
-    demoUrl: "#",
-    githubUrl: "https://github.com/prem-acharya/Restaurant_Websites---PHP",
   },
 ];
 
