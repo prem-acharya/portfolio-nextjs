@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -35,7 +35,7 @@ export const metadata: ExtendedMetadata = {
   },
   title: 'Prem Acharya | Full-Stack Developer & React/Next.js Enthusiast',
   description: 'Explore the portfolio of Prem Acharya, showcasing web development and expertise in React.js and Next.js.',
-  keywords: 'Prem Acharya, full stack developer, front end developer, backend developer, web design, developer, React js, Next js, web development',
+  keywords: 'prem acharya, developer portfolio, dev portfolio, portfolio, full stack developer, frontend developer, backend developer, web design, developer, React js, Next js, node, web development',
   openGraph: {
     title: 'Prem Acharya | Full-Stack Developer & React/Next.js Enthusiast',
     description: 'Explore the portfolio of Prem Acharya, showcasing web development and expertise in React.js and Next.js.',

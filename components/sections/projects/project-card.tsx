@@ -70,10 +70,10 @@ export function ProjectCard({
                 Demo
               </a>
             ) : (
-              <a rel="noopener noreferrer">
+              <span className="inline-flex items-center">
                 <span className="rounded-full w-3 h-3 mr-2 animate-pulse bg-red-500 to-red-600"></span>
                 Demo
-              </a>
+              </span>
             )}
           </Button>
           <Button variant="outline" size="sm" asChild>

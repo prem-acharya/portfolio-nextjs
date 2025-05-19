@@ -9,6 +9,7 @@ import {
   renderSimpleIcon,
   SimpleIcon,
 } from "react-icon-cloud";
+import Image from "next/image";
 
 export type DynamicCloudProps = {
   iconSlugs?: string[]; // Made iconSlugs optional
@@ -57,12 +58,8 @@ export const renderCustomIcon = (
     minContrastRatio,
     size: 42,
     aProps: {
-      href: "#",
-      target: undefined,
-      rel: undefined,
-      onClick: (e: React.MouseEvent<HTMLAnchorElement>) => e.preventDefault(),
       "aria-label": `${icon.title} icon`,
-      role: "button",
+      role: "img",
       tabIndex: 0,
     },
   });
@@ -101,16 +98,15 @@ export default function IconCloud({
           imageArray.length > 0 &&
           imageArray.map((image, index) => {
             return (
-              <a
+              <span
                 key={index}
-                href="#"
-                role="button"
+                role="img"
                 aria-label={`Technology icon ${index + 1}`}
-                onClick={(e) => e.preventDefault()}
                 tabIndex={0}
+                style={{ display: "inline-block" }}
               >
-                <img height="42" width="42" alt="Technology icon" src={image} />
-              </a>
+                <Image height="42" width="42" alt="Technology icon" src={image} />
+              </span>
             );
           })}
       </>
