@@ -15,7 +15,6 @@ import {
   ContactRound,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { defaultConfig } from "next/dist/server/config-shared";
 import Image from "next/image";
 import logo from "@/public/logo.webp";
 import logoHover from "@/public/logo3.webp";
