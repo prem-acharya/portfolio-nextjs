@@ -12,6 +12,16 @@ import {
 
 const projects = [
   {
+    title: "AI Agent",
+    type: "Personal",
+    demo: true,
+    description: "AI agent smoothly connects LLMs to Google Meet and Tasks for automated productivity.",
+    image: "/images/projects/project7.webp",
+    tags: ["Next", "Shadcn", "FastAPI", "Langchain"],
+    demoUrl: "https://agentpro.vercel.app",
+    githubUrl: "https://github.com/prem-acharya/ai-agent-frontend",
+  },
+  {
     title: "Social Media API",
     type: "Personal",
     demo: false,
