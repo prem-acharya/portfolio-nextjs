@@ -52,7 +52,7 @@ export function ContactSection() {
           >
             <h3 className="text-2xl font-semibold">Get in Touch</h3>
             <p className="text-muted-foreground">
-              I'm always interested in hearing about new projects and opportunities.
+              I&apos;m always interested in hearing about new projects and opportunities.
               Whether you have a question or just want to say hi, feel free to drop
               me a message!
             </p>
