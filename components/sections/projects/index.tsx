@@ -12,6 +12,16 @@ import {
 
 const projects = [
   {
+    title: "Pattern Lock",
+    type: "Personal",
+    demo: true,
+    description: "Pattern Lock UI component allows users draw patterns by connecting interactive dot components.",
+    image: "/images/projects/project8.webp",
+    tags: ["Next", "TypeScript", "Shadcn"],
+    demoUrl: "https://shadcn-pattern-lock.vercel.app",
+    githubUrl: "https://github.com/prem-acharya/pattern-lock",
+  },
+  {
     title: "AI Agent",
     type: "Personal",
     demo: true,
