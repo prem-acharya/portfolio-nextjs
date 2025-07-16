@@ -35,7 +35,7 @@ export const metadata: ExtendedMetadata = {
   },
   title: 'Prem Acharya | Full-Stack Developer & React/Next.js Enthusiast',
   description: 'Explore the portfolio of Prem Acharya, showcasing web development and expertise in React.js and Next.js.',
-  keywords: 'prem acharya, developer portfolio, dev portfolio, portfolio, full stack developer, frontend developer, backend developer, web design, developer, React js, Next js, node, web development',
+  keywords: 'prem acharya, developer portfolio, dev portfolio, portfolio, full stack developer, frontend developer, backend developer, web design, developer, React js, Next js, node, web development, react developer',
   openGraph: {
     title: 'Prem Acharya | Full-Stack Developer & React/Next.js Enthusiast',
     description: 'Explore the portfolio of Prem Acharya, showcasing web development and expertise in React.js and Next.js.',
