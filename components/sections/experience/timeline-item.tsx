@@ -7,13 +7,13 @@ export function TimelineItem() {
 
   const experiences = [
     {
-      title: "Full Stack Developer",
+      title: "React Developer",
       company: "Credsoft Technologies",
-      date: "Mar 2024 - Present • 1 yr",
+      date: "Mar 2024 - Present • 1 yr 5 mos",
       employmentType: "Full Time",
       locationType: "On-site",
-      description: "At Credsoft Technologies, I work as a Full Stack Developer, building functional and user-friendly web applications using tools like React, Next, Node and many more.",
-      skills: ["MERN Stack", "Next JS", "Node JS"],
+      description: "At Credsoft Technologies, I work as a React Developer, building functional and user-friendly web applications using tools like React, Next, Node and many more.",
+      skills: ["React JS", "Next JS", "Node JS", "Shadcn/ui"],
     },
     {
       title: "Web Developer",
