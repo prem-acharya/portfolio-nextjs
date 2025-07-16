@@ -7,12 +7,12 @@ export function TimelineItem() {
 
   const experiences = [
     {
-      title: "React Developer",
+      title: "Frontend Developer",
       company: "Credsoft Technologies",
       date: "Mar 2024 - Present • 1 yr 5 mos",
       employmentType: "Full Time",
       locationType: "On-site",
-      description: "At Credsoft Technologies, I work as a React Developer, building functional and user-friendly web applications using tools like React, Next, Node and many more.",
+      description: "At Credsoft Technologies, I work as a Frontend Developer, building functional and user-friendly web applications using tools like React, Next, Node and many more.",
       skills: ["React JS", "Next JS", "Node JS", "Shadcn/ui"],
     },
     {
